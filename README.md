@@ -11,11 +11,11 @@ After it, we will test the local environment with common mtqq clients and tools 
  - One Client will Publish one message with the value (42 - meaning of the life) to the same topic.
 
 ## Obs.:
-** I tested it on Windows running without WSL. 
-** I tested some commands running directly on conteiners (mosquitto_sup/pub) and outside the container (from the host)<!--(curl and MQTT Explorer)-->. 
-** In some cases I will add notes about the tools. 
+ - I tested it on Windows running without WSL. 
+ - I tested some commands running directly on conteiners (mosquitto_sup/pub) and outside the container (from the host)<!--(curl and MQTT Explorer)-->. 
+ - In some cases I will add notes about the tools. 
 <!-- ** I wrote one little C# application to test the flow with the broker. Not yet, but I'm working on it' -->
-** I'm using **Visual Studio Code (VScode)** because I like to see the highlight sintax of the files and I already have it on my machine, but you can use whatever you want to **create the configuration/password files** . Choose one text editor make the samples for shell commands more simple when I created this file. For god sake, give me a break. It's just a text editor.
+ - I'm using **Visual Studio Code (VScode)** because I like to see the highlight sintax of the files and I already have it on my machine, but you can use whatever you want to **create the configuration/password files** . Choose one text editor make the samples for shell commands more simple when I created this file. For god sake, give me a break. It's just a text editor.
 
 You can download it [here](https://code.visualstudio.com/download) from the oficial website. 
 Teach about how to install the VSCode is out of the scope of this document.
