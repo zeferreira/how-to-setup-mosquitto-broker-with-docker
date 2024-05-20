@@ -1,6 +1,6 @@
 # How to setup Mosquitto MQTT Broker using Docker Compose for development
 
-These is a configuration for a developement environment. Don't use it for production environment. 
+This is a configuration for a developement environment. Don't use it for production environment. 
 It works with for Windows and Linux Environments (tested with windows).
 
 The scenario is simple, the mosquitto broker will start without peristence and with basic authentication for one user (or more).
@@ -11,9 +11,9 @@ After it, we will test the local environment with common mtqq clients and tools 
  - One Client will Publish one message with the value (42 - meaning of the life) to the same topic.
 
 ## Obs.:
-** I tested it on Windows running without WSL. **
-** I tested some commands running directly on conteiners (mosquitto_sup/pub) and outside the container (curl and MQTT Explorer). **
-** In some cases I will add notes about the tools. **
+** I tested it on Windows running without WSL. 
+** I tested some commands running directly on conteiners (mosquitto_sup/pub) and outside the container (curl and MQTT Explorer). 
+** In some cases I will add notes about the tools. 
 <!-- ** I wrote one little C# application to test the flow with the broker. Not yet, but I'm working on it' -->
 ** I'm using **Visual Studio Code (VScode)** because I like to see the highlight sintax of the files and I already have it on my machine, but you can use whatever you want to **create the configuration/password files** . Choose one text editor make the samples for shell commands more simple when I created this file. For god sake, give a break. It's just a text editor.
 
