@@ -1,6 +1,6 @@
 # How to setup Mosquitto MQTT Broker using Docker Compose for development
 
-This is a configuration for a developement environment. Don't use it for production environment. 
+This is a configuration for a development environment. Don't use it for production environment. 
 It works with for Windows and Linux Environments (tested with windows).
 
 The scenario is simple, the mosquitto broker will start without peristence and with basic authentication for one user (or more).
@@ -12,10 +12,10 @@ After it, we will test the local environment with common mtqq clients and tools 
 
 ## Obs.:
 ** I tested it on Windows running without WSL. 
-** I tested some commands running directly on conteiners (mosquitto_sup/pub) and outside the container (curl and MQTT Explorer). 
+** I tested some commands running directly on conteiners (mosquitto_sup/pub) and outside the container (from the host)<!--(curl and MQTT Explorer)-->. 
 ** In some cases I will add notes about the tools. 
 <!-- ** I wrote one little C# application to test the flow with the broker. Not yet, but I'm working on it' -->
-** I'm using **Visual Studio Code (VScode)** because I like to see the highlight sintax of the files and I already have it on my machine, but you can use whatever you want to **create the configuration/password files** . Choose one text editor make the samples for shell commands more simple when I created this file. For god sake, give a break. It's just a text editor.
+** I'm using **Visual Studio Code (VScode)** because I like to see the highlight sintax of the files and I already have it on my machine, but you can use whatever you want to **create the configuration/password files** . Choose one text editor make the samples for shell commands more simple when I created this file. For god sake, give me a break. It's just a text editor.
 
 You can download it [here](https://code.visualstudio.com/download) from the oficial website. 
 Teach about how to install the VSCode is out of the scope of this document.
@@ -46,7 +46,7 @@ Latest instructions are [here](https://docs.docker.com/desktop/install/linux-ins
   
 ## Mosquitto Broker
 
-I supose that you know what is MQTT protocol, a Broker and (more specificaly) Mosquitto Broker. But, if you don't know it (really?) these links below will help you:
+I supose that you know what is MQTT protocol, a Broker and (more specificaly) Mosquitto Broker. But, if you don't know it (really? And are you here?) these links below will help you:
 
 **Introduction about MQTT Protocol [here] (https://mqtt.org/getting-started/) on mqtt.org website.
 
@@ -58,6 +58,8 @@ Now is the time to setup the envirmonment for the container.
 
 
 ## 2. Create the folder for Mosquitto configuration files
+
+On your host machine, open the shell (cmd or bash) and create the folders:
 
 ### Windows 
 
@@ -91,9 +93,9 @@ mkdir config
 
 ## 3. Create Mosquitto configuration file - mosquitto.conf
 
-Mosquitto has a configuration file named **mosquitto.conf** and you need to create the file before you test our scenario (or you can change it later and restart it, just in case of a mistake). You can use this file to choose the service configurations for your broker. In our case, we will choose the ports that will listem to the clients, if we accept anonymous or authenticated and the username and password to access our server (remember our scenario).
+Mosquitto has a configuration file named **mosquitto.conf** and you need to create the file before you test our scenario (or you can change it later and restart it, just in case of a mistake). You can use this file to choose the service configurations for your broker. In our case, we will choose the ports that will listem to the clients, if we accept anonymous or authenticated users and the username and password to access our server (remember our scenario).
 
-If you want to know more about Mosquitto configuration options check the [here](https://mosquitto.org/man/mosquitto-conf-5.html) on the official website.  
+If you want to know more about Mosquitto configuration options check [here](https://mosquitto.org/man/mosquitto-conf-5.html) on the official website.  
 
 Make sure that you are creating the file inside the **config folder** that we created:
 
@@ -154,12 +156,13 @@ cd mosquitto #yes, just mosquitto, not config.
 #create the empty docker compose file and open it on VSCode 
 code docker-compose.yml
 ```
+
 ### Content of Docker compose file
 
 Copy and paste the content below into your **docker-compose.yml** file. The file is very simple, we are just using the broker's official image, exposing the protocol ports (these numbers are standard for MQTT) and mapping the folder/file structure that we created previously.
 
 Some details you could pay attention to:
-- We exposed the same ports that we configured inside the configuration file. Without it, well, you know, you have no 'doors', right? With it, the container will accept connections on these ports and the service inside the container will also accept connections on the same ports. If you are running other containers on your docker, you need to check if some is already using these ports.
+- We exposed the same ports that we configured inside the configuration file. Without it, well, you know, you have no 'doors', right? With it, the container will accept connections on these ports and the service inside the container will also accept connections on the same ports. If you are running other containers on your docker, you need to check if your host has a service that is already using these ports.
 
 - We don't have persistence. Inside our mosquitto configuration file, we don't have a session with the configuration for persistence, you don't have information stored on your disk about the content of the messages. No logs, no storage files. If you want to enable persistence for your test server, take a look [here](https://mosquitto.org/man/mosquitto-conf-5.html). Seach for the 'persistence' tag and study the options that you need.
 
