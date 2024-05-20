@@ -48,11 +48,11 @@ Latest instructions are [here](https://docs.docker.com/desktop/install/linux-ins
 
 I supose that you know what is MQTT protocol, a Broker and (more specificaly) Mosquitto Broker. But, if you don't know it (really? And are you here?) these links below will help you:
 
-**Introduction about MQTT Protocol [here] (https://mqtt.org/getting-started/) on mqtt.org website.
+ - Introduction about MQTT Protocol [here] (https://mqtt.org/getting-started/) on mqtt.org website.
 
-**Main page of Eclipse Mosquitto [here] (https://mosquitto.org/) on mosquitto.org website.
+ - Main page of Eclipse Mosquitto [here] (https://mosquitto.org/) on mosquitto.org website.
 
-** What is a Message Broker [here](https://www.ibm.com/topics/message-brokers#:~:text=A%20message%20broker%20is%20software,messages%20between%20formal%20messaging%20protocols.) by IBM.
+ -  What is a Message Broker [here](https://www.ibm.com/topics/message-brokers#:~:text=A%20message%20broker%20is%20software,messages%20between%20formal%20messaging%20protocols.) by IBM.
 
 Now is the time to setup the envirmonment for the container.
 
