@@ -22,7 +22,7 @@ Teach about how to install the VSCode is out of the scope of this document.
 
 ## 1. Docker environment
 
-Docker installation is out of the scope of this document, as well as the commands and it's sintax. Please, check the links below if you need to understand bacic concepts about docker or if you don't have Docker on your machine.
+Docker installation is out of the scope of this document, as well as the commands and it's sintax. Please, check the links below if you need to understand basic concepts about docker or if you don't have Docker on your machine.
 
 ### Docker Desktop / Docker Compose 
 
@@ -30,9 +30,9 @@ Latest intructions are [here] (https://docs.docker.com/desktop/) on docker websi
 
 Latest intructions are [here] (https://docs.docker.com/compose/) on docker website.
 
-**Make sure that you understande what is a container, how to run, restart or delete a container and what is a docker compose file and how to start/stop it. You also need to understand the sintax for docker compose files, the relation between the folders on your host machine and the path that you are going to provide inside the compose file. 
+**Make sure that you understand what is a container, how to run, restart or delete a container and what is a docker compose file and how to start/stop it. You also need to understand the sintax for docker compose files, the relation between the folders on your host machine and the path that you are going to provide inside the compose file. 
 
-It's also important the image that we are going to use and you always need to check his information on docker hub. Do your homework.
+It's also important the image that we are going to use and you always need to check the instructions on docker hub. Do your homework.
 
 If you don't know the basic concepts about docker compose files check it [here](https://docs.docker.com/compose/gettingstarted/). 
 
